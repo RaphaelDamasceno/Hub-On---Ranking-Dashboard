@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  
+  --color-brand-blue: #2563eb; /* Vibrant Hub On Blue */
+  --color-brand-dark: #020617; /* Deepest Navy/Black */
+  --color-brand-accent: #10b981; /* Vibrant Hub On Green */
+  --color-brand-slate: #64748b;
+  --color-app-bg: #f8fafc;
+  --color-border-subtle: #f1f5f9;
+}
+
+body {
+  @apply bg-app-bg text-brand-dark font-sans antialiased;
+}
+
+.hubon-gradient {
+  @apply bg-gradient-to-r from-brand-blue to-brand-accent text-white;
+}
+
+.hubon-gradient-text {
+  @apply bg-gradient-to-r from-brand-blue to-brand-accent bg-clip-text text-transparent;
+}
+
+.premium-card {
+  @apply bg-white rounded-[2rem] p-8 shadow-[0_4px_20px_rgb(0,0,0,0.02)] border border-slate-100 transition-all duration-300;
+}
+
+.premium-card:hover {
+  @apply shadow-[0_8px_40px_rgb(0,0,0,0.06)] border-brand-accent/20 translate-y-[-2px];
+}
+
+.glass-header {
+  @apply sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-white/50;
+}
+
+.status-badge {
+  @apply px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-brand-accent/10 text-brand-accent;
+}
+
+.btn-primary {
+  @apply bg-brand-dark text-white px-6 py-3 rounded-2xl font-bold text-sm flex items-center gap-2 hover:bg-brand-blue transition-all active:scale-95 shadow-xl shadow-brand-dark/10;
+}
+
+.table-header {
+  @apply text-left py-4 text-[11px] font-extrabold uppercase text-slate-400 tracking-[0.2em] border-b border-slate-50;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
